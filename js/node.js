@@ -95,6 +95,7 @@ const getItems = (searchMobiles) => {
     // spinner
     if ((onclick = "getValue()")) {
       document.getElementById("spinner").style.display = "none";
+      // document.getElementById("modal-Id").style.display = "block";
     }
   });
 };
@@ -104,58 +105,51 @@ const getMobileId = (mobilesId) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${mobilesId}`)
     .then((res) => res.json())
     .then((data) => showMobileId(data.data));
+
+  // When the user clicks on details button open it again
+  if ((onclick = "getMobileId()")) {
+    document.getElementById("modal-Id").style.display = "block";
+  }
 };
 
 // show phone details
 const showMobileId = (idDetails) => {
-  const addMobileId = document.getElementById("addMobileId");
+  const addMobileId = document.getElementById("modal-Id");
   addMobileId.innerHTML = "";
   const div = document.createElement("div");
+  div.classList.add("add-bg");
   div.innerHTML = `
-  <div class="card p-2" style="width: 20rem;">
-    <div class="d-flex justify-content-center">
-         <img src="${idDetails.image}" class="card-img-top w-50" alt="...">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">${idDetails.name}</h5>
-      <p>${
-        idDetails.releaseDate ? idDetails.releaseDate : "Not found Release Date"
-      }</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> 
-        <b>ChipSet: </b>  ${idDetails.mainFeatures.chipSet} <br>
-        <b>DisplaySize: </b>  ${idDetails.mainFeatures.displaySize} <br>
-        <b>Memory: </b>  ${idDetails.mainFeatures.memory} <br>
-        <b>Storage: </b>  ${idDetails.mainFeatures.storage} <br>
-        </li>
-      <li class="list-group-item"> <b>Sensors: </b>  ${
-        idDetails.mainFeatures.sensors
-      }</li>
-      <li class="list-group-item"> 
-        <b>Bluetooth: </b>  ${
-          idDetails.others ? idDetails.others.Bluetooth : "not found"
-        } <br>
-        <b>GPS: </b>   ${
-          idDetails.others ? idDetails.others.GPS : "not found"
-        } <br>
-        <b>NFC: </b>   ${
-          idDetails.others ? idDetails.others.NFC : "not found"
-        } <br>
-        <b>Radio: </b>   ${
-          idDetails.others ? idDetails.others.Radio : "not found"
-        } <br>
-        <b>USB: </b>   ${
-          idDetails.others ? idDetails.others.USB : "not found"
-        } <br>
-        <b>WLAN: </b>   ${
-          idDetails.others ? idDetails.others.WLAN : "not found"
-        } 
+  <div id="modal" onclick = "modal()">
+  <div class="modal-bg">
+    <button onclick="crossValue()" class="btn-light crossBtn" id="cross">
+      X
+    </button>
+    <h1>title</h1>
+    <ul class="my-ul">
+      <li>
+        <b>ChipSet: </b> Find Send Sms Usa at Shopwebly, the Website to
+        Compare Prices! Find and Compare Send Sms Usa Online. Save Now at
+        Shopwebly! Many Products. Easy Acces. Quick Results.
       </li>
-    </ul> 
+      <li><b>ChipSet:</b></li>
+      <li><b>ChipSet:</b></li>
+    </ul>
   </div>
+</div>
   `;
   addMobileId.appendChild(div);
+};
+// When the user clicks on <span> (x), close the modal
+const crossValue = () => {
+  if ((onclick = "crossValue()")) {
+    document.getElementById("modal-Id").style.display = "none";
+  }
+};
+// When the user clicks anywhere outside of the modal, close it
+const modal = () => {
+  if ((onclick = "crossValue()")) {
+    document.getElementById("modal-Id").style.display = "none";
+  }
 };
 
 // **************//
