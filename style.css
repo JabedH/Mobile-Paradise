@@ -29,6 +29,9 @@ span {
   display: none;
   color: white;
 }
+.small-item {
+  width: 2rem;
+}
 
 /* ----------- */
 
