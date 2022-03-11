@@ -106,9 +106,15 @@ const getItems = (searchMobiles) => {
 };
 
 // add to like
+let totalLoveIncrise = 0;
 const addToLove = () => {
   console.log("clicked");
   document.getElementById("love-circle").style.display = "block";
+  // const loveIncrise = document.getElementById("loveIncrise").innerText;
+  // totalLoveIncrise = parseInt(loveIncrise);
+  totalLoveIncrise++;
+  console.log(totalLoveIncrise);
+  loveIncrise.innerText = totalLoveIncrise;
 };
 // get mobiles id
 const getMobileId = (mobilesId) => {

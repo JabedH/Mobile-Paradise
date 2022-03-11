@@ -44,7 +44,7 @@
           <span class="navbar-text all-position">
             <img class="small-item" type="button" src="img/love.png" alt="" />
             <div id="love-circle">
-              <p>1</p>
+              <p id="loveIncrise">1</p>
             </div>
           </span>
           <span class="navbar-text ms-3 all-position">
@@ -117,6 +117,9 @@
       </div>
     </div> -->
     <!-- border -->
+
+    <!-- add to cart -->
+  
     <div
       class="container list-group-item border-bottom-0 border-start-0 border-end-0 pb-4"
     ></div>
@@ -132,10 +135,10 @@
             aria-describedby="button-addon2"
           />
           <button
-            class="btn btn-outline-secondary"
+            class="btn-outline-secondary mybtn"
             type="button"
             onclick="getValue()"
-            id="button-addon2"
+            
           >
             Search
           </button>
@@ -168,6 +171,7 @@
       ></div>
       <div class="d-flex justify-content-center pt-4 pb-4"></div>
     </div>
+    
     <!-- display mobile -->
     <div class="container" id="hideLatestPhone">
       <h3 class="text-center mt-2">Latest Phones</h3>
@@ -180,6 +184,25 @@
       <div id="modal-Id"></div>
     </div> -->
     <div id="modal-Id"></div>
+
+    <section class="container">
+      <div class="addtocart"> 
+        <div>
+          <P type="button" class="close">X</P>
+        </div>
+        <div>
+          <img class="w-25" src="img/mobile-bg.jpg" alt="">
+          <h1>Name</h1>
+          <div>
+            <button>-</button>
+            <input type="number">
+            <button>+</button>
+          </div>
+          <h3>$ <span>1200</span> </h3>
+          <img src="" alt="">
+        </div>
+      </div>
+    </section>
     <!-- bootstrap script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
