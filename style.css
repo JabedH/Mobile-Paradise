@@ -30,7 +30,42 @@ span {
   color: white;
 }
 .small-item {
-  width: 2rem;
+  width: 2.2rem;
+}
+.small-item1 {
+  width: 2.2rem;
+  filter: invert(71%) sepia(48%) saturate(4623%) hue-rotate(358deg)
+    brightness(99%) contrast(110%);
+}
+.all-position {
+  position: relative;
+}
+#love-circle {
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  position: absolute;
+  right: -5px;
+  display: none;
+}
+#cart-circle {
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  position: absolute;
+  right: -5px;
+}
+.icon-position p {
 }
 
 /* ----------- */

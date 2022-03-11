@@ -87,7 +87,12 @@ const getItems = (searchMobiles) => {
           <h5 class="card-title text-center">brand: ${searchMobile.brand}</h5>
         </div>
         <div class="text-center">
-        <a href="#" onclick="getMobileId('${searchMobile.slug}')" class=" text-center btn btn-primary ">More Details</a>
+        <div class="d-flex justify-content-center">
+          <a href="#" onclick="getMobileId('${searchMobile.slug}')" class=" text-center btn btn-primary ">More Details</a>
+          <img onclick="addToLove()" class="small-item1 ms-2" type="button" src="img/love.png" alt="" />
+          <img class="small-item ms-2" type="button" src="img/cart.png" alt="" />
+        </div>
+        
         </div>
       </div>
     </div>`;
@@ -100,6 +105,11 @@ const getItems = (searchMobiles) => {
   });
 };
 
+// add to like
+const addToLove = () => {
+  console.log("clicked");
+  document.getElementById("love-circle").style.display = "block";
+};
 // get mobiles id
 const getMobileId = (mobilesId) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${mobilesId}`)
