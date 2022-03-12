@@ -154,7 +154,10 @@ const showCart = () => {
 const cartDetails = () => {
   document.getElementById("showFullCart").style.display = "block";
 };
-
+// close cart area
+const closeCart = () => {
+  document.getElementById("showFullCart").style.display = "none";
+};
 // get mobiles id
 const getMobileId = (mobilesId) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${mobilesId}`)
