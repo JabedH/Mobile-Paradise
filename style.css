@@ -127,3 +127,22 @@ span {
 .close {
   text-align: end;
 }
+.delete-Item {
+  height: 30px;
+  width: 30px;
+  filter: invert(18%) sepia(77%) saturate(7396%) hue-rotate(360deg)
+    brightness(107%) contrast(121%);
+}
+.plus-minus button {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+}
+.plus-minus {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.form-control {
+  margin: 0 -20px 0 -20px;
+}
