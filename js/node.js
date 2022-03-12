@@ -90,7 +90,7 @@ const getItems = (searchMobiles) => {
         <div class="d-flex justify-content-center">
           <a href="#" onclick="getMobileId('${searchMobile.slug}')" class=" text-center btn btn-primary ">More Details</a>
           <img onclick="addToLove()" class="small-item1 ms-2" type="button" src="img/love.png" alt="" />
-          <img class="small-item ms-2" type="button" src="img/cart.png" alt="" />
+          <img onclick="showCart()" class="small-item ms-2" type="button" src="img/cart.png" alt="" />
         </div>
         
         </div>
@@ -104,18 +104,57 @@ const getItems = (searchMobiles) => {
     }
   });
 };
-
+// search enter button
+const searchButton = document.getElementById("searchButton");
+const searchValue = document.getElementById("searchValue");
+searchValue.addEventListener("keypress", function (event) {
+  if (event.key == "Enter") {
+    searchButton.click();
+  }
+});
 // add to like
 let totalLoveIncrise = 0;
 const addToLove = () => {
   console.log("clicked");
   document.getElementById("love-circle").style.display = "block";
-  // const loveIncrise = document.getElementById("loveIncrise").innerText;
-  // totalLoveIncrise = parseInt(loveIncrise);
   totalLoveIncrise++;
   console.log(totalLoveIncrise);
   loveIncrise.innerText = totalLoveIncrise;
 };
+// add to cart
+const showCart = () => {
+  const showAddToCart = document.getElementById("showAddToCart");
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <div class="d-flex p-1">
+  <img class="w-25" src="img/mobile-bg.jpg" alt="">
+  <div class="plus-minus ">
+    <button>
+      <i class="fas fa-minus">-</i>
+    </button>
+    <input
+              id="phone-number"
+              type="number"
+              min="0"
+              class="form-control text-center w-25 inputControl"
+              value="1"
+            />
+    <button>
+      <i class="fas fa-plus">+</i>
+    </button>
+    <h4 ><span>$</span> 1200</h4>
+    <img type="button" class="delete-Item" src="img/delete.png" alt="">
+  </div>
+  
+</div>
+  `;
+  showAddToCart.appendChild(div);
+};
+// show cart list item
+const cartDetails = () => {
+  document.getElementById("showFullCart").style.display = "block";
+};
+
 // get mobiles id
 const getMobileId = (mobilesId) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${mobilesId}`)
@@ -124,7 +163,7 @@ const getMobileId = (mobilesId) => {
 
   // When the user clicks on details button open it again
   if ((onclick = "getMobileId()")) {
-    document.getElementById("modal-Id").style.display = "block";
+    document.getElementById("modal-Id").style.display = block;
   }
 };
 

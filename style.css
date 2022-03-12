@@ -24,6 +24,7 @@ span {
 }
 .mybtn {
   border: 0;
+  border-radius: 5px;
 }
 #spinner {
   display: none;
@@ -123,6 +124,7 @@ span {
   border-radius: 10px;
   padding: 1rem;
   overflow: hidden;
+  display: none;
 }
 .close {
   text-align: end;
@@ -143,6 +145,6 @@ span {
   align-items: center;
   justify-content: space-around;
 }
-.form-control {
+.inputControl {
   margin: 0 -20px 0 -20px;
 }
