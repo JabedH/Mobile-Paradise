@@ -123,10 +123,12 @@ const addToLove = () => {
 };
 // add to cart
 const showCart = () => {
+  // document.getElementById("showAddToCart").style.display = "block";
   const showAddToCart = document.getElementById("showAddToCart");
   const div = document.createElement("div");
+  div.classList.add("newDeleteBtn");
   div.innerHTML = `
-  <div class="d-flex p-1">
+  <div class="d-flex p-1 myRemoveBtn">
   <img class="w-25" src="img/mobile-bg.jpg" alt="">
   <div class="plus-minus ">
     <button>
@@ -143,7 +145,7 @@ const showCart = () => {
       <i class="fas fa-plus">+</i>
     </button>
     <h4 ><span>$</span> 1200</h4>
-    <img type="button" class="delete-Item" src="img/delete.png" alt="">
+    <img  type="button" class="delete-Item" src="img/delete.png" alt="">
   </div>
   
 </div>
@@ -158,6 +160,26 @@ const cartDetails = () => {
 const closeCart = () => {
   document.getElementById("showFullCart").style.display = "none";
 };
+
+// delete item
+// const deleteItem = () => {
+//   document.getElementById("showAddToCart").style.display = "none";
+// };
+
+// document
+//   .getElementById("showAddToCart")
+//   .addEventListener("click", function (event) {
+//     event.target.parentNode.removeChild(event.target);
+//   });
+
+const items = document.getElementsByClassName("newDeleteBtn");
+for (let item of items) {
+  item.addEventListener("click", function () {
+    // document.getElementById("showAddToCart").removeChild(item);
+    // e.target.parentNode.removeChild(e.target);
+    console.log("clicked");
+  });
+}
 // get mobiles id
 const getMobileId = (mobilesId) => {
   fetch(`https://openapi.programming-hero.com/api/phone/${mobilesId}`)
@@ -165,13 +187,14 @@ const getMobileId = (mobilesId) => {
     .then((data) => showMobileId(data.data));
 
   // When the user clicks on details button open it again
-  if ((onclick = "getMobileId()")) {
-    document.getElementById("modal-Id").style.display = block;
-  }
+  // if ((onclick = "getMobileId()")) {
+  //   document.getElementById("modal-Id").style.display = block;
+  // }
 };
 
 // show phone details
 const showMobileId = (idDetails) => {
+  console.log(idDetails);
   const addMobileId = document.getElementById("modal-Id");
   addMobileId.innerHTML = "";
   const div = document.createElement("div");
@@ -182,16 +205,10 @@ const showMobileId = (idDetails) => {
     <button onclick="crossValue()" class="btn-light crossBtn" id="cross">
       X
     </button>
-    <h1>title</h1>
-    <ul class="my-ul">
-      <li>
-        <b>ChipSet: </b> Find Send Sms Usa at Shopwebly, the Website to
-        Compare Prices! Find and Compare Send Sms Usa Online. Save Now at
-        Shopwebly! Many Products. Easy Acces. Quick Results.
-      </li>
-      <li><b>ChipSet:</b></li>
-      <li><b>ChipSet:</b></li>
-    </ul>
+    <div class="d-flex justify-content-center">
+         <img src="${idDetails.image}" class="card-img-top w-50" alt="...">
+    </div>
+    <h1>${idDetails.name}</h1>
   </div>
 </div>
   `;
