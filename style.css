@@ -115,7 +115,8 @@ span {
 
 /* add to cart */
 .addtocart {
-  background-color: aquamarine;
+  background-color: white;
+  border: 1px solid #ccc;
   width: 30rem;
   height: auto;
   position: absolute;

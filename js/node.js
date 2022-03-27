@@ -144,7 +144,7 @@ const showCart = () => {
     <button>
       <i class="fas fa-plus">+</i>
     </button>
-    <h4 ><span>$</span> 1200</h4>
+    <h4 ><span>$</span> 00</h4>
     <img  type="button" class="delete-Item" src="img/delete.png" alt="">
   </div>
   
